@@ -15,5 +15,12 @@ private TDD tdd;
 		tdd.put("Nombre", "Luis");
 		assertEquals("Luis" , tdd.get("Nombre"));
 	}
+	@Test
+	public void addClaveDosValoresModificaValor(){
+		tdd.put("Nombre", "Luis");
+		assertEquals("Luis", tdd.get("Nombre"));
+		tdd.put("Nombre", "Pedro");
+		assertEquals("Pedro", tdd.get("Nombre"));
+	}
 
 }
