@@ -45,12 +45,43 @@ private TDD tdd;
 	public void devuelveFalseSiNoExisteClave(){
 		tdd.put("Nombre", "Antonio");
 		assertEquals(false, tdd.containsKey("Apellidos"));	
+
 	}
+
+	@Test
+	public void devuelveCeroSiLaTablaEstaVacia(){
+		assertEquals(0, tdd.size());
+		
+	}
+	
+	@Test
+	public void devuelveUnoSiHayUnElemento(){
+		tdd.put("Apellidos", "Rondón");
+		assertEquals(1, tdd.size());
+		
+	}
+	@Test
+	public void devuelveDosSiHayDosElementos(){
+		tdd.put("Nombre", "Carlos");
+		tdd.put("Apellido", "Melero");
+		assertEquals(2, tdd.size());
+	}	
 	
 	@Test
 	public void devuelveTrueSiBorraClave(){
 		tdd.put("Nombre", "Carlos");
 		assertEquals(true, tdd.remove("Nombre"));	
-
+	
+	@Test
+	public void devuelveFalseSiNoPuedeBorrarClave(){
+		tdd.put("Apellidos", "Melero");
+		assertEquals(false, tdd.remove("Nombre"));
+	}
+	@Test
+	public void devuelveCeroSiLaTablaEstaVacia(){
+		assertEquals(0, tdd.size());
+		
+	}
+	
 }
 
