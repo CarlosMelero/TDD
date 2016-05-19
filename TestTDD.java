@@ -40,4 +40,17 @@ private TDD tdd;
 	public void devuelveTrueSiExisteClave(){
 		tdd.put("Nombre", "Juan");
 		assertEquals(true, tdd.containsKey("Nombre"));
+	
+	@Test
+	public void devuelveFalseSiNoExisteClave(){
+		tdd.put("Nombre", "Antonio");
+		assertEquals(false, tdd.containsKey("Apellidos"));	
+	}
+	
+	@Test
+	public void devuelveTrueSiBorraClave(){
+		tdd.put("Nombre", "Carlos");
+		assertEquals(true, tdd.remove("Nombre"));	
+
 }
+
