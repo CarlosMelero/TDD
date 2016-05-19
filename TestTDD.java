@@ -4,10 +4,16 @@ import org.junit.Test;
 
 
 public class TestTDD {
-
+private TDD tdd;
+	
+	@Before
+	public void setUp(){
+		tdd = new TDD();
+	}
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void addClaveReturnsValue(){
+		tdd.put("Nombre", "Luis");
+		assertEquals("Luis" , tdd.get("Nombre"));
 	}
 
 }
