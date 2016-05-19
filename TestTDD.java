@@ -22,5 +22,22 @@ private TDD tdd;
 		tdd.put("Nombre", "Pedro");
 		assertEquals("Pedro", tdd.get("Nombre"));
 	}
+	
+	@Test(expected = NoExisteClaveAsociada.class)
+	public void addClaveDevuelveExcepcion(){
+		tdd.put("Nombre", "Juan");
+		tdd.get("Apellido");
+	}
 
+	@Test
+	public void addClaveDevuelveValorSiNoExisteDevuelveValorPorDefecto(){
+		tdd.put("Nombre", "Juan");
+		assertEquals("Juan", tdd.getOrElse("Nombre", "0"));
+		assertEquals("0", tdd.getOrElse("Apellido", "0"));
+		
+	}
+	@Test
+	public void devuelveTrueSiExisteClave(){
+		tdd.put("Nombre", "Juan");
+		assertEquals(true, tdd.containsKey("Nombre"));
 }
